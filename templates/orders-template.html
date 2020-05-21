@@ -1,0 +1,37 @@
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="../../../templates/orders-style.css" type="text/css">
+</head>
+<body>
+  <h1>{{branch}}</h1>
+  <div class="orders">
+    {% for order in orders %}
+      {% if order['food_item_count'] > 0 %}
+        <div class="order-container">
+          <div class="order-number">{{ order['order_number'] }}</div>
+          <div class="line-items">
+            {% for item in order['line_items'] %}
+              {% if item['is_food_item'] %}
+                <div class="line-item">
+                  <div class="item-quantity">{{ item['Lineitem quantity'] }}</div>
+                  <div class="item-name">{{ item['short_name'] }}</div>
+                  <div class="item-price">${{ item['Lineitem price'] }}</div>
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+          {% if order['notes'] %}
+            <div class="customer-notes">“{{order['notes']}}”</div>
+          {% endif %}
+          <table class="order-totals">
+            <tr><td>Subtotal</td><td>{{ "$%.2f"|format(order['food_item_subtotal']) }}</td></tr>
+            <tr><td>Tax</td><td>{{ "$%.2f"|format(order['taxes']) }}</td></tr>
+            <tr><td>Tip</td><td>{{ "$%.2f"|format(order['tip_total']) }}</td></tr>
+            <tr><td>Shipping</td><td>{{ "$%.2f"|format(order['shipping_total']) }}</td></tr>
+            <tr><td>Total</td><td><b>{{ "$%.2f"|format(order['total']) }}</b></td></tr>
+          </table>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</body

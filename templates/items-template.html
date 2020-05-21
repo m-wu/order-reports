@@ -1,0 +1,30 @@
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="../../../templates/items-style.css" type="text/css">
+</head>
+<body>
+  <h1>{{branch}}</h1>
+  <div class="items"> 
+     {% for item in items %}
+    		<table class="item">
+	      	<tr>
+	      		<td class="item-count">{{ item['count'] }}</td>
+	      		<td class="item-name">{{ item['short_name'] }}</td>
+	      	</tr>
+	      	<tr>
+	      		<td/>
+	      		<td>
+	      			<table class="notes-table">
+	      				{% for note in item['notes'] %}
+	      					<tr>
+	      						<td class="note-quantity">{{note.quantity}}</td>
+	      						<td class="note-text">“{{note.note}}” <span class="note-order-number">({{note.order_number}})</span></td>
+	      					</tr>
+	      				{% endfor %}
+	      			</table>
+	      		</td>
+	      	</tr>
+      	</table>
+    	{% endfor %}
+  </div>
+</body

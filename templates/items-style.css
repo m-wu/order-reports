@@ -1,0 +1,38 @@
+table {
+    page-break-inside: avoid;
+    font-size: 20px;
+}
+
+.item {
+    margin-bottom: 0.5rem;
+}
+
+.item-count, .item-name {
+    font-size: 30px;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+}
+
+.item-count {
+    text-align: right;
+    padding-right: 10px;
+}
+
+.notes-table {
+    color: #333;
+}
+
+.note-quantity {
+    /*background-clip: padding-box;
+    border-radius: 50%;*/
+    background: #eee;
+    padding: 0 0.5rem;
+}
+
+.note-text {
+    padding-left: 0.5rem;
+}
+
+.note-order-number {
+    color: #888;
+}
