@@ -1,6 +1,6 @@
 # Order Report Generator
 
-Order Report Generator is a script that generates variuos reports and summaries for online orders. Currently, it primarily serves restaurant online orders to be fulfilled and delivered to customers.
+Order Report Generator summarizes online orders and generates reports for Shopify. It takes a CSV order file and organizes it by product, order, and customer address. Currently, it is primarily tailored to use cases for restaurants.
 
 ## Features
 * Generate order summary, order shipping labels, item summary report, consolidated delivery locations.
